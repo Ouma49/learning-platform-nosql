@@ -2,7 +2,7 @@
 
 Pour ce projet, vous allez créer une petite API qui va servir de backend à une plateforme d'apprentissage en ligne. J'ai préparé la structure du projet avec une organisation professionnelle du code, comme vous pouvez le constater dans ce dépôt Github.
 
-Commençons par l'organisation pratique :
+
 
 1. Création de votre dépôt :
    - Sur Github.com
