@@ -1,7 +1,7 @@
 // Question : Pourquoi créer un module séparé pour les connexions aux bases de données ?
 // Réponse : Cela permet de centraliser la gestion des connexions aux bases de données, facilitant ainsi la maintenance et la réutilisation du code. Cela permet également de séparer les préoccupations, rendant le code plus modulaire et plus facile à tester.
 // Question : Comment gérer proprement la fermeture des connexions ?
-// Réponse : On peut gérer la fermeture des connexions en écoutant les événements de fermeture de l'application (comme process.on('SIGINT')) et en appelant les méthodes de fermeture des clients MongoDB et Redis.
+// Réponse : On  peut gérer la fermeture des connexions en écoutant les événements de fermeture de l'application (comme process.on('SIGINT')) et en appelant les méthodes de fermeture des clients MongoDB et Redis.
 
 const { MongoClient } = require('mongodb');
 const redis = require('redis');
@@ -11,9 +11,9 @@ let mongoClient, redisClient, db;
 
 async function connectMongo(retries = 5) {
   try {
-    console.log('Attempting to connect to MongoDB with URI:', config.MONGODB_URI);
-    mongoClient = await MongoClient.connect(config.MONGODB_URI, { useUnifiedTopology: true });
-    db = mongoClient.db(config.learning_platform);
+    console.log('Attempting to connect to MongoDB with URI:', config.mongodb.uri);
+    mongoClient = await MongoClient.connect(config.mongodb.uri, { useUnifiedTopology: true });
+    db = mongoClient.db(config.mongodb.dbName);
     console.log('Successfully connected to MongoDB, database:', db.databaseName);
   } catch (error) {
     console.error('Error connecting to MongoDB:', error);
@@ -28,9 +28,9 @@ async function connectMongo(retries = 5) {
 
 async function connectRedis(retries = 5) {
   return new Promise((resolve, reject) => {
-    console.log('Attempting to connect to Redis with URI:', config.REDIS_URI);
+    console.log('Attempting to connect to Redis with URI:', config.redis.uri);
     redisClient = redis.createClient({
-      url: config.REDIS_URI,
+      url: config.redis.uri,
     });
 
     redisClient.on('connect', () => {
