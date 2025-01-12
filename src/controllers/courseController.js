@@ -111,6 +111,7 @@ async function deleteCourse(req, res) {
   }
 }
 
+
 // In courseController.js, add this new function:
 async function getCourseStats(req, res) {
   try {
