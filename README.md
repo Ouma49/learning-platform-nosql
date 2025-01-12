@@ -138,7 +138,7 @@ package.json : Ce fichier décrit les dépendances du projet et fournit des scri
 
 # Choix Techniques pour le Projet
 
-1. Utilisation de Postman pour Tester l'API
+### 1. Utilisation de Postman pour Tester l'API
 
 ![alt text](<screenshots/postman.png>)
 
@@ -151,7 +151,9 @@ Le choix de Postman pour tester et interagir avec l'API repose sur ses capacité
 
 Ces types de requêtes ont été essentiels pour tester le bon fonctionnement de l'API, en s'assurant que les opérations de création, récupération et suppression de ressources sont correctement implémentées.
 
-2. Utilisation de MongoDB Compass pour la Gestion de la Base de Données
+### 2. Utilisation de MongoDB Compass pour la Gestion de la Base de Données
+
+![alt text](screenshots/mongodb_compass.png)
 
 MongoDB Compass a été choisi pour gérer la base de données, offrant une interface graphique qui simplifie la visualisation et la manipulation des données stockées dans MongoDB. Ce choix technique a permis de vérifier rapidement les entrées de données, de valider les requêtes, et d'assurer l'intégrité des données.
 

@@ -111,8 +111,7 @@ async function deleteCourse(req, res) {
   }
 }
 
-
-// In courseController.js, add this new function:
+// In courseController.js, add this new function to get course statistics
 async function getCourseStats(req, res) {
   try {
     const result = await mongoService.countDocumentsWithIds('courses');
